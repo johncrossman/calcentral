@@ -14,8 +14,8 @@ namespace :mailing_lists do
         add[:success] += list.population_results[:add][:success]
         remove[:total] += list.population_results[:remove][:total]
         remove[:success] += list.population_results[:remove][:success]
-        welcome_emails[:total] += list.population_results[:welcome][:total]
-        welcome_emails[:success] += list.population_results[:welcome][:success]
+        welcome_emails[:total] += list.population_results[:welcome_emails][:total]
+        welcome_emails[:success] += list.population_results[:welcome_emails][:success]
       else
         Rails.logger.warn "Update task failed for #{list.list_name}: #{list.request_failure}."
         failed_lists << list.list_name
