@@ -1,0 +1,10 @@
+{
+  "id": "conferences",
+  "html_url": "/courses/1234567/conferences",
+  "full_url": "https://canvas.example.com/courses/1234567/conferences",
+  "position": 13,
+  "hidden": true,
+  "visibility": "public",
+  "label": "Conferences",
+  "type": "internal"
+}

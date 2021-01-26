@@ -593,6 +593,7 @@ describe CanvasCsv::ProvideCourseSite do
     context 'when SIS course ID is present' do
       before { subject.import_data['sis_course_id'] = 'CRS:ENGIN-7-2015-B' }
       let(:sis_course_proxy) { Canvas::SisCourse.new }
+      let(:canvas_course_id) { '1234567' }
       let(:new_course_properties) do
         {
           'id' => canvas_course_id,

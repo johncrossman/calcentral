@@ -181,6 +181,9 @@ module Canvas
 
       on_request(uri_matching: "#{@api_root}/tabs", method: :get).
         respond_with_file('fixtures', 'json', "canvas_tabs#{file_suffix}.json")
+
+      on_request(uri_matching: "#{@api_root}/tabs", method: :put).
+        respond_with_file('fixtures', 'json', "canvas_tab_hidden#{file_suffix}.json")
     end
 
   end
