@@ -31,7 +31,7 @@ describe CanvasLti::ProjectProvision do
   end
 
   describe '#create_project' do
-    let(:canvas_course_id) { 23 }
+    let(:canvas_course_id) { 1234567 }
     let(:account_id) { Settings.canvas_proxy.projects_account_id }
     let(:term_id) { Settings.canvas_proxy.projects_term_id }
     let(:url_root) { Settings.canvas_proxy.url_root }
@@ -81,7 +81,7 @@ describe CanvasLti::ProjectProvision do
     it 'returns project site url' do
       expect_any_instance_of(Canvas::Course).to receive(:create).with(account_id, project_name, project_name, term_id, unique_sis_project_id).and_return(success_response)
       result = subject.create_project(project_name)
-      expect(result[:projectSiteId]).to eq 23
+      expect(result[:projectSiteId]).to eq canvas_course_id
       expect(result[:projectSiteUrl]).to eq url_root + '/courses/' + result[:projectSiteId].to_s
     end
 
@@ -94,7 +94,7 @@ describe CanvasLti::ProjectProvision do
     it 'imports the Project template' do
       expect_any_instance_of(Canvas::CourseCopyImport).to receive(:import_course_template).with(template_id).and_call_original
       result = subject.create_project(project_name)
-      expect(result[:projectSiteId]).to eq 23
+      expect(result[:projectSiteId]).to eq canvas_course_id
     end
 
   end

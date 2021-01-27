@@ -31,7 +31,12 @@ module CanvasLti
           import_start_time = Time.now.to_i
         end
 
-        enrollment = CanvasLti::CourseAddUser.new(user_id: @uid, canvas_course_id: course_details['id']).add_user_to_course(@uid, 'Owner')
+        tabs_worker = Canvas::ExternalTools.new(canvas_course_id: site_id)
+        if (conferences_tab = tabs_worker.course_site_tab_list.find { |t| t['label'] == 'Conferences' })
+          tabs_worker.hide_course_site_tab(conferences_tab)
+        end
+
+        enrollment = CanvasLti::CourseAddUser.new(user_id: @uid, canvas_course_id: site_id).add_user_to_course(@uid, 'Owner')
 
         if progress_id
           import_state = 'new'
