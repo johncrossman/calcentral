@@ -85,21 +85,21 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html
     with ssh ([note](https://help.github.com/articles/connecting-to-github-with-ssh/))
 
     ```bash
-    git clone git@github.com:[your GitHub Account]/calcentral.git
-    # e.g. git clone git@github.com:christianv/calcentral.git
+    git clone git@github.com:[your GitHub Account]/junction.git
+    # e.g. git clone git@github.com:christianv/junction.git
     ```
 
     or via https - ([note](https://help.github.com/articles/caching-your-github-password-in-git/))
     ```bash
-    git clone https://github.com/[your Github Account]/calcentral.git
-    # e.g. git clone https://github.com/christianv/calcentral.git
+    git clone https://github.com/[your Github Account]/junction.git
+    # e.g. git clone https://github.com/christianv/junction.git
 
     ```
 
-1. Go inside the `calcentral` repository:
+1. Go inside the `junction` repository:
 
     ```bash
-    cd calcentral
+    cd junction
     # Answer "yes" if it asks you to trust a new .rvmrc file.
     ```
 
@@ -111,7 +111,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html
     rvm get head
     rvm install jruby-[put-version-here]
     cd ..
-    cd calcentral
+    cd junction
     # Answer "yes" again if it asks you to trust a new .rvmrc file.
     rvm list
     # Make sure that everything looks fine
@@ -135,7 +135,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 1. Download the appropriate gems with [Bundler](http://gembundler.com/rails3.html):
 
-    **Important**: Make sure you have the JRuby-upgraded CalCentral codebase in your calcentral directory before running `bundle install`.
+    **Important**: Make sure you have the JRuby-upgraded codebase in your junction directory before running `bundle install`.
 
     ```bash
     rvm rubygems 2.7.10 --force
@@ -302,7 +302,7 @@ This is necessary when your application can't be CAS authenticated or when you'r
 
 ### "Act As" another user
 
-To help another user debug an issue, you can "become" them on CalCentral. To assume the identity of another user, you must:
+To help another user debug an issue, you can "become" him or her. To assume the identity of another user, you must:
 
 - Currently be logged in as a designated superuser
 - Be accessing a machine/server which the other user has previously logged into (e.g. from localhost, you can't act as a random student, since that student has probably never logged in at your terminal)
