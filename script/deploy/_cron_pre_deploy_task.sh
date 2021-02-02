@@ -26,12 +26,12 @@ tmp_dir=$(date +"/var/tmp/junction-git-checkout_%Y-%m-%d_%H%M%S")
 mkdir -p "${tmp_dir}"
 cd "${tmp_dir}"
 
-git clone https://github.com/ets-berkeley-edu/calcentral.git
-cd calcentral
+git clone https://github.com/ets-berkeley-edu/junction.git
+cd junction
 git checkout "${git_branch}"
 
-cp -R "${tmp_dir}/calcentral/script" "${HOME}/calcentral/"
-cp "${tmp_dir}/calcentral/config/deploy.rb" "${HOME}/calcentral/config/"
+cp -R "${tmp_dir}/junction/script" "${HOME}/calcentral/"
+cp "${tmp_dir}/junction/config/deploy.rb" "${HOME}/calcentral/config/"
 
 rm -Rf "${tmp_dir}"
 
