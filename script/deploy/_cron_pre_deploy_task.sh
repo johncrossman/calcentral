@@ -26,6 +26,7 @@ tmp_dir=$(date +"/var/tmp/junction-git-checkout_%Y-%m-%d_%H%M%S")
 mkdir -p "${tmp_dir}"
 cd "${tmp_dir}"
 
+git config --global credential.helper store
 git clone https://github.com/ets-berkeley-edu/junction.git
 cd junction
 git checkout "${git_branch}"
